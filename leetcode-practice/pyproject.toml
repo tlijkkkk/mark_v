@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "leetcode-practice" # For PyPI 
+version = "0.1.0"
+description = "A leetcode practice project in Python"
+authors = ["Tiecong Li"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://example.com"
+repository = "https://github.com/tiecongli/mark_v.git"
+keywords = ["leetcode", "python"]
+packages = [{include = "leetcode_practice"}] # For import
+
+[tool.poetry.dependencies]
+python = "^3.8"
+# Add other basic dependencies here
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
