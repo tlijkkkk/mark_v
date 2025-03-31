@@ -13,7 +13,7 @@ class Solution:
         # No need to check None of root because problem constraint states tree is not empty
 
         def doRob(root: Optional[TreeNode]) -> List[int]:
-            if root == None:
+            if root is None:
                 return [0, 0]
             
             leftDp = doRob(root.left)

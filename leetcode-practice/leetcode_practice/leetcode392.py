@@ -1,5 +1,5 @@
 class Solution:
-    def isSubSeq(self, s: str, t: str) -> bool:
+    def is_sub_seq(self, s: str, t: str) -> bool:
         i = 0
         j = 0
         while i < len(s) and j < len(t):
@@ -7,4 +7,4 @@ class Solution:
                 i += 1
             j += 1
 
-        return i == len(s) 
+        return i == len(s)

@@ -1,5 +1,5 @@
 class Solution:
-    def isSubSeq(self, s: str, t: str) -> bool:
+    def is_subseq(self, s: str, t: str) -> bool:
         if len(s) > len(t):
             return False
         

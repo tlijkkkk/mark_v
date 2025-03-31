@@ -2,24 +2,23 @@ from typing import List
 
 
 class Solution:
-    def maxSumOfTwoNonOverlappingSubArrays(self, nums: List[int], firstLen: int, secondLen: int) -> int:        
-        def doSearch(firstLen: int, secondLen: int):
-            maxFinal = 0 # given 0 <= nums[i] <= 1000
-            max2 = 0
-            sum1 = 0
-            sum2 = 0
-            j = 0
+    def max_sum_of_two_non_overlapping_subarrays(self, nums: List[int], first_len: int, second_len: int) -> int:        
+        def do_search(first_len: int, second_len: int):
+            max_final = 0  # given 0 <= nums[i] <= 1000
+            max_second = 0
+            sum_first = 0
+            sum_second = 0
 
             for i in range(len(nums)):
-                sum1 += nums[i]
-                if i >= firstLen:
-                    sum1 -= nums[i - firstLen]
-                    sum2 += nums[i - firstLen]
-                    if i - firstLen >= secondLen:
-                        sum2 -= nums[i - firstLen - secondLen]
-                    max2 = max(max2, sum2)
-                    maxFinal = max(maxFinal, sum1 + max2)
+                sum_first += nums[i]
+                if i >= first_len:
+                    sum_first -= nums[i - first_len]
+                    sum_second += nums[i - first_len]
+                    if i - first_len >= second_len:
+                        sum_second -= nums[i - first_len - second_len]
+                    max_second = max(max_second, sum_second)
+                    max_final = max(max_final, sum_first + max_second)
 
-            return maxFinal
+            return max_final
         
-        return max(doSearch(firstLen=firstLen, secondLen=secondLen), doSearch(firstLen=secondLen, secondLen=firstLen))
+        return max(do_search(first_len=first_len, second_len=second_len), do_search(first_len=second_len, second_len=first_len))
