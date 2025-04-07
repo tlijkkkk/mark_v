@@ -2,7 +2,7 @@ from typing import List
 
 
 class Solution:
-    def bestTimeToBuyAndSellStockIV(self, k: int, prices: List[int]) -> int:
+    def best_time_to_buy_and_sell_stock_iv(self, k: int, prices: List[int]) -> int:
         dp: List[List[int]] = [[0] * 2 for _ in range(k)]
 
         for i in range(k):

@@ -2,9 +2,9 @@ from typing import List
 
 
 class Solution:
-    def maxSquare(self, matrix: List[List[str]]) -> int:
+    def max_square(self, matrix: List[List[str]]) -> int:
         dp: List[int] = [0] * (len(matrix[0]) + 1)
-        maxSideLen = 0
+        max_side_len = 0
         
         for i in range(len(matrix)):
             cur: List[int] = [0] * (len(matrix[0]) + 1)
@@ -13,10 +13,10 @@ class Solution:
                     cur[j + 1] = 0
                 elif matrix[i][j] == "1":
                     cur[j + 1] = min(dp[j + 1], dp[j], cur[j]) + 1
-                    maxSideLen = max(maxSideLen, cur[j + 1])
+                    max_side_len = max(max_side_len, cur[j + 1])
             dp = cur
 
-        return maxSideLen ** 2
+        return max_side_len ** 2
 
 
 

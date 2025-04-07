@@ -2,7 +2,7 @@ from typing import List
 
 
 class Solution:
-    def longestIncreasingSubSeq(self, nums: List[int]) -> int:
+    def longest_increasing_sub_seq(self, nums: List[int]) -> int:
         dp: List[int] = [1] * len(nums)
 
         for i in range(len(nums)):

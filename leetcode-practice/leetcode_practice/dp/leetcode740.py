@@ -2,39 +2,39 @@ from typing import List
 
 
 class Solution:
-    def deleteAndEarn(self, nums: List[int]) -> int:
-        m = {}
+    def delete_and_earn(self, nums: List[int]) -> int:
+        num_map = {}
 
         for num in nums:
-            if num in m:
-                m[num] = m[num] + num
+            if num in num_map:
+                num_map[num] = num_map[num] + num
             else:
-                m[num] = num
+                num_map[num] = num
 
-        sortedNums = sorted(m.keys())
+        sorted_nums = sorted(num_map.keys())
 
-        prePre = m[sortedNums[0]]
+        pre_pre = num_map[sorted_nums[0]]
 
-        if len(sortedNums) == 1:
-            return prePre
+        if len(sorted_nums) == 1:
+            return pre_pre
 
-        pre = max(prePre, m[sortedNums[1]]) if sortedNums[1] - sortedNums[0] == 1 else prePre + m[sortedNums[1]]
+        pre = max(pre_pre, num_map[sorted_nums[1]]) if sorted_nums[1] - sorted_nums[0] == 1 else pre_pre + num_map[sorted_nums[1]]
 
-        if len(sortedNums) == 2:
+        if len(sorted_nums) == 2:
             return pre
 
-        for i in range(2, len(sortedNums)):
-            if sortedNums[i] - sortedNums[i - 1] == 1:
-                cur = max(pre, prePre + m[sortedNums[i]])
+        for i in range(2, len(sorted_nums)):
+            if sorted_nums[i] - sorted_nums[i - 1] == 1:
+                cur = max(pre, pre_pre + num_map[sorted_nums[i]])
             else:
-                cur = pre + m[sortedNums[i]]
-            prePre = pre
+                cur = pre + num_map[sorted_nums[i]]
+            pre_pre = pre
             pre = cur
             
         return cur
 
 
-        
+
 
 
 

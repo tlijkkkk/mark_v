@@ -2,7 +2,7 @@ from typing import List
 
 
 class Solution:
-    def findMinInRotatedSortedArray(self, nums: List[int]) -> int:
+    def find_min_in_rotated_sorted_array(self, nums: List[int]) -> int:
         i = 0
         j = len(nums) - 1
 

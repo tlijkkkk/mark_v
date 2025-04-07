@@ -9,22 +9,21 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    def houseRobberIII(self, root: Optional[TreeNode]) -> int:
+    def house_robber_iii(self, root: Optional[TreeNode]) -> int:
         # No need to check None of root because problem constraint states tree is not empty
 
-        def doRob(root: Optional[TreeNode]) -> List[int]:
+        def do_rob(root: Optional[TreeNode]) -> List[int]:
             if root is None:
                 return [0, 0]
             
-            leftDp = doRob(root.left)
-            rightDp = doRob(root.right)
+            left_dp = do_rob(root.left)
+            right_dp = do_rob(root.right)
 
-            return [root.val + leftDp[1] + rightDp[1], max(
-                leftDp[0] + rightDp[0],
-                leftDp[0] + rightDp[1],
-                leftDp[1] + rightDp[0],
-                leftDp[1] + rightDp[1]
+            return [root.val + left_dp[1] + right_dp[1], max(
+                left_dp[0] + right_dp[0],
+                left_dp[0] + right_dp[1],
+                left_dp[1] + right_dp[0],
+                left_dp[1] + right_dp[1]
             )]
         
-        
-        return max(doRob(root))
+        return max(do_rob(root))

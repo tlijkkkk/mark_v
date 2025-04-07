@@ -2,13 +2,13 @@ from typing import List
 
 
 class Solution:
-    def houseRobberIV(self, nums: List[int], k: int) -> int:
+    def house_robber_iv(self, nums: List[int], k: int) -> int:
         low = min(nums)
         high = max(nums)
 
         # Find the target between [low, high] that is the max of at least k houses
 
-        def housesBelow(wealth: int) -> int:
+        def houses_below(wealth: int) -> int:
             count = 0
             i = 0
             while i < len(nums):
@@ -18,13 +18,13 @@ class Solution:
                 i += 1
             return count
         
-        minWealth = float('inf')
+        min_wealth = float('inf')
         while low <= high:
             mid = low + (high - low) // 2
-            if housesBelow(mid) < k:
+            if houses_below(mid) < k:
                 low = mid + 1
             else:
-                minWealth = mid
+                min_wealth = mid
                 high = mid - 1
 
-        return minWealth
+        return min_wealth
