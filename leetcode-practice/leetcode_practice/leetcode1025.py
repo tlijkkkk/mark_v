@@ -1,3 +1,3 @@
 class Solution:
-    def divisorGame(self, n: int) -> bool:
-        return n % 2 == 0 # Alice wins if n is even otherwise lose
+    def divisor_game(self, num: int) -> bool:
+        return num % 2 == 0  # Alice wins if num is even otherwise lose

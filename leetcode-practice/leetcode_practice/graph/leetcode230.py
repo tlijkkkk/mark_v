@@ -8,26 +8,26 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    def kthSmallestElementInBST(self, root: Optional[TreeNode], k: int) -> int:
-        kthSmallest = -1
+    def kth_smallest_element_in_bst(self, root: Optional[TreeNode], k: int) -> int:
+        kth_smallest = -1
         count = 0
 
-        def doDFS(root: Optional[TreeNode], k: int) -> None:
-            nonlocal kthSmallest
-            if kthSmallest != -1:
+        def do_dfs(root: Optional[TreeNode], k: int) -> None:
+            nonlocal kth_smallest
+            if kth_smallest != -1:
                 return
 
             if root == None:
                 return
             
-            doDFS(root.left, k)
+            do_dfs(root.left, k)
             nonlocal count 
             count += 1
 
             if count == k: 
-                kthSmallest = root.val
+                kth_smallest = root.val
             
-            doDFS(root.right, k)
+            do_dfs(root.right, k)
         
-        doDFS(root, k)
-        return kthSmallest
+        do_dfs(root, k)
+        return kth_smallest

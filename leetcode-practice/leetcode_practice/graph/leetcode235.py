@@ -8,22 +8,22 @@ class TreeNode:
         self.right = None
 
 class Solution:
-    def lowestCommonAncestorOfBST(self, root: Optional[TreeNode], p: Optional[TreeNode], q: Optional[TreeNode]) -> TreeNode:
+    def lowest_common_ancestor_of_bst(self, root: Optional[TreeNode], p: Optional[TreeNode], q: Optional[TreeNode]) -> TreeNode:
         # determine p, q order
         if q.val < p.val:
             tmp = p
             p = q
             q = tmp
       
-        def doFind(root: Optional[TreeNode], p: Optional[TreeNode], q: Optional[TreeNode]) -> TreeNode:
+        def do_find(root: Optional[TreeNode], p: Optional[TreeNode], q: Optional[TreeNode]) -> TreeNode:
             if root is not None and q.val < root.val:
-                return doFind(root.left, p, q)
+                return do_find(root.left, p, q)
             
             if root is not None and p.val > root.val:
-                return doFind(root.right, p, q)
+                return do_find(root.right, p, q)
         
             return root
         
-        return doFind(root, p, q)
-            
+        return do_find(root, p, q)
+
 
