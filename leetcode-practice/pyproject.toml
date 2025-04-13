@@ -13,6 +13,7 @@ packages = [{include = "leetcode_practice"}] # For import
 [tool.poetry.dependencies]
 python = "^3.8"
 # Add other basic dependencies here
+sortedcontainers = "^2.4.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^6.0"
