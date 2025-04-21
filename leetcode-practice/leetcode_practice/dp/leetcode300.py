@@ -11,3 +11,13 @@ class Solution:
                     dp[i] = max(dp[i], dp[j] + 1)
 
         return max(dp)
+    
+        # subseq = []
+        # for num in nums:
+        #     idx = bisect_left(subseq, num)
+        #     if idx == len(subseq):
+        #         subseq.append(num)
+        #     else:
+        #         subseq[idx] = num
+
+        # return len(subseq)
