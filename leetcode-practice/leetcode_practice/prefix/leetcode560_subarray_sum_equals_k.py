@@ -11,7 +11,7 @@ class Solution:
             prefix_sum += num
             if prefix_sum - k in prefix_sum_count:
                 count += prefix_sum_count[prefix_sum - k]
-            prefix_sum_count[prefix_sum] = prefix_sum_count.get(prefix_sum, 0) + 1 # this needs to be here to prevent self-matching
+            prefix_sum_count[prefix_sum] = prefix_sum_count.get(prefix_sum, 0) + 1
 
         return count
     

@@ -1,6 +1,6 @@
 import math
 
-
+# Unique sliding window that slides in the middle 
 class Solution:
     def min_del_string_balance(self, s: str) -> int:
         left_b_count = 0

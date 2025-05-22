@@ -10,10 +10,10 @@ class Solution:
         def is_repeating(length: int) -> bool:
             ss: Set[str] = set()
             for i in range(0, len(s) - length + 1):
-                if s[i:i + length] in ss:
+                if s[i : i + length] in ss:
                     return True
                 
-                ss.add(s[i: i + length])
+                ss.add(s[i : i + length])
             return False
 
         while low <= high:
