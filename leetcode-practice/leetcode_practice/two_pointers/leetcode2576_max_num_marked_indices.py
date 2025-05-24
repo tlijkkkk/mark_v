@@ -3,7 +3,6 @@ from typing import List
 
 class Solution:
     def find_max_num_marked_indices(self, nums: List[int]) -> int:
-        nums.sort()
         nums_sorted = sorted(nums)
         i = 0
         j = len(nums_sorted) // 2
@@ -16,4 +15,3 @@ class Solution:
             j += 1
             
         return count * 2
-        
