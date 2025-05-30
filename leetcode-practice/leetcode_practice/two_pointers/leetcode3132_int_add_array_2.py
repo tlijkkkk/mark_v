@@ -18,7 +18,7 @@ class Solution:
         nums1.sort()
         nums2.sort()
         min_x = math.inf
-        for i in range(min(3, len(nums1))):
+        for i in range(3):
             x = nums2[0] - nums1[i]
             if is_valid(x):
                 min_x = min(min_x, x)
