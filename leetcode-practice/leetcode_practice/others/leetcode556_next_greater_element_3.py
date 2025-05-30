@@ -7,7 +7,7 @@ class Solution:
 
         change_idx = -1
         for i in range(len(n_str) - 2, -1, -1):
-            if n_str[i] < n_str[i + 1]:  # 🔧 should be <, not >
+            if n_str[i] < n_str[i + 1]:  
                 change_idx = i
                 break  # only need the first one from right
 
