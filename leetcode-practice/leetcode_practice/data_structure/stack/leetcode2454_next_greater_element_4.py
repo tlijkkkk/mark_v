@@ -4,20 +4,20 @@ from collections import deque
 
 class Solution:
     def next_greater_element_iv(self, nums: List[int]) -> List[int]:
-        mono_decrease_seen = []
-        mono_decrease_first_greater = []
+        desc_mono_stk = []
+        desc_mono_stk_promoted = []
         results = [-1] * len(nums)
 
         for i in range(len(nums)):
-            promotes = deque()
-            while mono_decrease_seen and nums[mono_decrease_seen[-1]] < nums[i]:
-                promotes.appendleft(mono_decrease_seen.pop()) # these are decending ordered indices that value less then current number, so they are the first batch of greaters that need to be promoted to the next
+            temp = deque()
+            while desc_mono_stk and nums[desc_mono_stk[-1]] < nums[i]:
+                temp.appendleft(desc_mono_stk.pop()) # these are decending ordered indices, so appendleft to maintain the descending order
              
-            while mono_decrease_first_greater and nums[mono_decrease_first_greater[-1]] < nums[i]:
-                results[mono_decrease_first_greater.pop()] = nums[i] # these are also decending ordered because we check every nums[i]
+            while desc_mono_stk_promoted and nums[desc_mono_stk_promoted[-1]] < nums[i]:
+                results[desc_mono_stk_promoted.pop()] = nums[i] # these are also decending ordered because we check every nums[i]
             
-            mono_decrease_first_greater += promotes 
-            mono_decrease_seen.append(i)
+            desc_mono_stk_promoted += temp 
+            desc_mono_stk.append(i)
         
         return results
             
