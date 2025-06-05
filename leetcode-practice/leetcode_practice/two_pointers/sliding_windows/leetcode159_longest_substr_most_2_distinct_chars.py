@@ -3,17 +3,17 @@ from typing import Dict
 
 class Solution:
     def longest_substring_most_2_distinct_chars(self, s: str) -> int:
-        dt_char_idx: Dict = {}
+        dt_char_idx: Dict[str, int] = {}
         longest = 0
         i = 0
 
         for j in range(len(s)):
-            if s[j] not in dt_char_idx and len(dt_char_idx) >= 2:
-                del_char = min(dt_char_idx, key=dt_char_idx.get)
-                i = dt_char_idx[del_char] + 1
+            dt_char_idx[s[j]] = j
+            if len(dt_char_idx) > 2:
+                del_char, del_idx = min(dt_char_idx.items(), key=lambda item: item[1])
+                i = del_idx + 1
                 dt_char_idx.pop(del_char)
 
-            dt_char_idx[s[j]] = j
             longest = max(longest, j - i + 1)
         
         return longest

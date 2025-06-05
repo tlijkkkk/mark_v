@@ -1,8 +1,8 @@
-from typing import List
+from typing import List, Dict
 
 class Solution:
     def repeated_dna_seq(self, s: str) -> List[str]:
-        dt_repeat = {}
+        dt_repeat: Dict[str, bool] = {}
         i, j = 0, 9
 
         while j < len(s):
