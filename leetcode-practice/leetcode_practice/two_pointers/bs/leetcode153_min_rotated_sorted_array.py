@@ -6,11 +6,11 @@ class Solution:
         i = 0
         j = len(nums) - 1
 
-        while i < j - 1:
+        while i < j:
             mid = i + (j - i) // 2
             if nums[mid] <= nums[j]:
                 j = mid
             else:
-                i = mid
+                i = mid + 1
         
-        return min(nums[i], nums[j])
+        return nums[i]
