@@ -5,11 +5,11 @@ class Solution:
         if len(arr) <= 1:
             return 1
         
-        i, j = 0, 1
+        i = 0
         longest = 0
         last_comparison_sign = -1
 
-        while j < len(arr):
+        for j in range(1, len(arr)):
             if arr[j] > arr[j - 1]:
                 comparison_sign = 0
             elif arr[j] < arr[j - 1]:
@@ -26,8 +26,6 @@ class Solution:
                 longest = max(longest, j - i + 1)
 
             last_comparison_sign = comparison_sign
-            
-            j += 1
         
         return longest
         

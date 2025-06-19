@@ -5,11 +5,11 @@ class Solution:
         if k == 0 or k == 1:
             return 0
 
-        i, j = 0, 0
+        i = 0
         prod = 1
         result = 0
 
-        while j < len(nums):
+        for j in range(len(nums)):
             prod *= nums[j]
 
             while prod >= k:
@@ -17,6 +17,5 @@ class Solution:
                 i += 1
 
             result += j - i + 1
-            j += 1
     
         return result

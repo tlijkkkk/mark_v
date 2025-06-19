@@ -7,10 +7,10 @@ class Solution:
             dt_char_count[c] = dt_char_count.get(c, 0) + 1
         
         result = []
-        i, j = 0, 0
+        i = 0
 
         dt_tmp: Dict[str, int] = {}
-        while j < len(s):
+        for j in range(len(s)):
             if s[j] not in dt_char_count: 
                 dt_tmp = {}
                 i = j + 1
@@ -23,6 +23,5 @@ class Solution:
 
             if dt_tmp == dt_char_count:
                 result.append(i)
-            j += 1
         
         return result

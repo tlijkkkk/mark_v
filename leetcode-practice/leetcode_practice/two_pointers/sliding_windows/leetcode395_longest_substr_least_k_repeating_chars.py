@@ -10,8 +10,8 @@ class Solution:
 
         for current_unique_count in range(1, len(st_unique) + 1):
             dt_char_count: Dict[str, int] = {}
-            i, j = 0, 0
-            while j < len(s):
+            i = 0
+            for j in range(len(s)):
                 dt_char_count[s[j]] = dt_char_count.get(s[j], 0) + 1
                 while len(dt_char_count) > current_unique_count:
                     dt_char_count[s[i]] -= 1
@@ -21,7 +21,6 @@ class Solution:
                 
                 if min(dt_char_count.values()) >= k:
                     longest = max(longest, j - i + 1) 
-                j += 1
 
         return longest
 

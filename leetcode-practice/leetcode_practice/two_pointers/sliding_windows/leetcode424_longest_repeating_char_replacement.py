@@ -2,12 +2,12 @@ from typing import Dict
 
 class Solution:
     def longest_repeating_char_replacement(self, s: str, k: int) -> int:
-        i, j = 0, 0
+        i = 0
         char_count: Dict[str, int] = {}
         max_repeat = 0
         max_len = 0
 
-        while j < len(s):
+        for j in range(len(s)):
             char_count[s[j]] = char_count.get(s[j], 0) + 1
             max_repeat = max(max_repeat, char_count[s[j]])
 
@@ -16,8 +16,6 @@ class Solution:
                 i += 1
 
             max_len = max(max_len, j - i + 1)
-
-            j += 1
 
         return max_len
 

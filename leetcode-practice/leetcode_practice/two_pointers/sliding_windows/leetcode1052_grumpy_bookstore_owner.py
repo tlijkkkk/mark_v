@@ -10,16 +10,14 @@ class Solution:
         max_satisfied_cust = satisfied_cust
 
         i = 0
-        j = minutes # points to the first element outside of the window
 
-        while j < len(customers):
+        for j in range(minutes, len(customers)): # points to the first element outside of the window
             if grumpy[j]:
                 satisfied_cust += customers[j]
             if grumpy[i]:
                 satisfied_cust -= customers[i]
             max_satisfied_cust = max(max_satisfied_cust, satisfied_cust)
 
-            j += 1
             i += 1
 
         return max_satisfied_cust

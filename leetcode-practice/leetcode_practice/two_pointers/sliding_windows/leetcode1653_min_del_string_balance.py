@@ -8,10 +8,12 @@ class Solution:
         min_del = right_a_count
 
         for c in s:
-            if c == 'b':
-                left_b_count += 1
             if c == 'a':
                 right_a_count -= 1
+            
             min_del = min(min_del, left_b_count + right_a_count)
+            
+            if c == 'b':
+                left_b_count += 1
 
         return min_del
