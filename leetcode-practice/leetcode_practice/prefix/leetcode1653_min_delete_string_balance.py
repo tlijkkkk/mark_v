@@ -2,7 +2,7 @@ import math
 
 # Unique sliding window that slides in the middle 
 class Solution:
-    def min_del_string_balance(self, s: str) -> int:
+    def min_delete_string_balance(self, s: str) -> int:
         left_b_count = 0
         right_a_count = s.count('a')
         min_del = right_a_count
