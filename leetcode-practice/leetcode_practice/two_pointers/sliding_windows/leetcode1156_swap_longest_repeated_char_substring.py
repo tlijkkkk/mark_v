@@ -12,7 +12,7 @@ class Solution:
     def swap_longest_repeated_char_substring(self, text: str) -> int:
         longest = 0
         dt_char_freq: Dict[str, int] = dict(Counter(text))
-        groups: List[Group] = [Group(c, len(list(grouper))) for c, grouper in itertools.groupby(text)]
+        groups: List[Group] = [Group(c, len(list(group))) for c, group in itertools.groupby(text)]
 
         for i in range(len(groups)):
             len_candidate = groups[i].size

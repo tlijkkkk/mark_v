@@ -1,15 +1,17 @@
+from typing import Dict
+
 class Solution:
     def longest_substring_without_repeating_characters(self, s: str) -> int:
         max_len = 0
         i = 0
-        char_map = {}
+        dt_char_count: Dict[str, int] = {}
 
         for j in range(len(s)):
-            if s[j] in char_map:
-                if i <= char_map[s[j]]:
-                    i = char_map[s[j]] + 1
+            if s[j] in dt_char_count:
+                if i <= dt_char_count[s[j]]:
+                    i = dt_char_count[s[j]] + 1
                 
-            char_map[s[j]] = j    
+            dt_char_count[s[j]] = j    
             max_len = max(max_len, j - i + 1)
         
         return max_len

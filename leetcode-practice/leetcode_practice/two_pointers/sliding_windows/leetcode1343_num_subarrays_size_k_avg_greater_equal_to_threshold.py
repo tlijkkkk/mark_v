@@ -12,7 +12,7 @@ class Solution:
 
             if j - i + 1 > k:
                 sum_so_far -= arr[i]
-                i -= 1
+                i += 1
             
             if j - i + 1 == k:
                 count += 1 if sum_so_far >= min_sum else 0
