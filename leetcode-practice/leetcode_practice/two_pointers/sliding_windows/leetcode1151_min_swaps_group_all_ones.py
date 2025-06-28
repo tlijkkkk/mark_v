@@ -1,8 +1,11 @@
 from typing import List
 
 class Solution:
-    def min_swaps_group_ones(self, nums: List[int]) -> int:
+    def min_swaps_group_all_ones(self, nums: List[int]) -> int:
         total_ones = sum(nums)
+        if total_ones <= 1:
+            return 0
+
         most_ones = 0
         count = 0
 

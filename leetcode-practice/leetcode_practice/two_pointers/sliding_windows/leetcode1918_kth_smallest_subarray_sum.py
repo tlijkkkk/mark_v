@@ -16,8 +16,7 @@ class Solution:
                 count += (j - i + 1)
             return count
 
-        low = min(nums)
-        high = sum(nums)
+        low, high = min(nums), sum(nums)
 
         while low < high:
             mid = low + (high - low) // 2

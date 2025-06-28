@@ -1,7 +1,7 @@
 from typing import List
 
 class Solution:
-    def count_num_nice_subarrays(self, nums: List[int], k: int) -> int:
+    def num_nice_subarrays(self, nums: List[int], k: int) -> int:
         count = 0
         result = 0
         prefix_even_count = 0
