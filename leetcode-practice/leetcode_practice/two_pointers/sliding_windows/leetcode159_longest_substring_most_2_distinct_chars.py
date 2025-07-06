@@ -1,4 +1,5 @@
 from typing import Dict
+from collections import defaultdict
 
 
 class Solution:
@@ -10,9 +11,9 @@ class Solution:
         for j in range(len(s)):
             dt_char_idx[s[j]] = j
             if len(dt_char_idx) > 2:
-                del_char, del_idx = min(dt_char_idx.items(), key=lambda item: item[1])
+                del_idx = min(dt_char_idx.values())
                 i = del_idx + 1
-                dt_char_idx.pop(del_char)
+                dt_char_idx.pop(s[del_idx])
 
             longest = max(longest, j - i + 1)
         

@@ -6,7 +6,7 @@ class Solution:
         i = 0
         
         for j in range(len(nums)):      
-            if j - i > k:
+            while j - i > k:
                 s.remove(nums[i])
                 i += 1
             
