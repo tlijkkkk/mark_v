@@ -2,7 +2,7 @@ from typing import Dict
 from collections import defaultdict
 
 class Solution:
-    def longest_special_substring_thrice(self, s: str) -> int:
+    def longest_special_substring_thrice_ii(self, s: str) -> int:
         dt_special_count: Dict[str, int] = defaultdict(int)
         longest = -1
         

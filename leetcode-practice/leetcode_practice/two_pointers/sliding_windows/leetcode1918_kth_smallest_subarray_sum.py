@@ -20,9 +20,9 @@ class Solution:
 
         while low < high:
             mid = low + (high - low) // 2
-            if count_sum(mid) < k:
-                low = mid + 1
-            else:
+            if count_sum(mid) >= k:
                 high = mid
+            else:
+                low = mid + 1
 
         return low

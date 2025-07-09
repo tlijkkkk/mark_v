@@ -8,6 +8,7 @@ class Solution:
 
         for j in range(len(s)):
             dt_chat_idx[s[j]] = j
+            
             if len(dt_chat_idx) > k:
                 remove_key, idx = min(dt_chat_idx.items(), key=lambda item: item[1])
                 i = idx + 1
