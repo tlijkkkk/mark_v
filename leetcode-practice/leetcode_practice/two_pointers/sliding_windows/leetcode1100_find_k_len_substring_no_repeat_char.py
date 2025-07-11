@@ -4,9 +4,8 @@ from typing import Dict
 class Solution:
     def find_k_length_substring_no_repeated_chars(self, s: str, k: int) -> int:
         dt_repeat: Dict[str, int] = {}
-
-        i = 0
         result = 0
+        i = 0
 
         for j in range(len(s)):
             if s[j] in dt_repeat:

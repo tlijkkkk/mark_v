@@ -13,6 +13,7 @@ class Solution:
             
             idx = sorted_window.bisect_left(nums[j] - value_diff)
 
+            # nums[j] need to compare with the first (insertion) and last range boundaries to make sure it is within the range
             if idx < len(sorted_window) and abs(nums[j] - sorted_window[idx]) <= value_diff:
                 return True
             

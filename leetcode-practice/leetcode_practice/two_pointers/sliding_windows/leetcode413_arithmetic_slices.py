@@ -8,15 +8,11 @@ class Solution:
 
         while j < len(nums):
             if nums[j] - nums[j - 1] != nums[i + 1] - nums[i]:
-                if j - i >= 3:
-                    n = j - i - 3 + 1
-                    result += sum(range(n, 0, -1))
                 i = j - 1
+            
+            if j - i + 1 >= 3:
+                result += j - i + 1 - 2
 
             j += 1
-
-        if j - i >= 3:
-            n = j - i - 3 + 1
-            result += sum(range(n, 0, -1))
 
         return result

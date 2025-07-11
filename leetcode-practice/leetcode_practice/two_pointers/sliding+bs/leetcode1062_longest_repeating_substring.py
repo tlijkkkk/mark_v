@@ -7,6 +7,7 @@ class Solution:
         high = len(s) - 1
         max_len = 0
 
+        # The best approach is Rabin-Karp (rolling hash) to save space, here just use a simpler sliding window instead
         def is_repeating(length: int) -> bool:
             ss: Set[str] = set()
             for i in range(0, len(s) - length + 1):

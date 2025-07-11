@@ -5,9 +5,9 @@ class Solution:
         if len(arr) <= 1:
             return 1
         
-        i = 0
         longest = 0
         last_comparison_sign = -1
+        i = 0
 
         for j in range(1, len(arr)):
             if arr[j] > arr[j - 1]:

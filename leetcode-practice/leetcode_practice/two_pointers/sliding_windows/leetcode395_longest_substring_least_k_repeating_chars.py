@@ -2,9 +2,7 @@ from typing import Dict, Set
 
 class Solution:
     def longest_substring_least_k_repeating_chars(self, s: str, k: int) -> int:
-        st_unique: Set[str] = set()
-        for c in s:
-            st_unique.add(c)
+        st_unique: Set[str] = set(s)
         
         longest = 0
 

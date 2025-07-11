@@ -16,3 +16,4 @@ class Solution:
             
             max_len = max(max_len, j - i + 1)
         
+        return max_len

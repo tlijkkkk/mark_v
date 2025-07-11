@@ -18,13 +18,11 @@ class Solution:
                 i += 1
             return count
         
-        min_wealth = float('inf')
-        while low <= high:
+        while low < high:
             mid = low + (high - low) // 2
-            if houses_below(mid) < k:
-                low = mid + 1
+            if houses_below(mid) >= k:
+                high = mid
             else:
-                min_wealth = mid
-                high = mid - 1
+                low = mid + 1
 
-        return min_wealth
+        return low

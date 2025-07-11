@@ -2,21 +2,17 @@ from typing import List
 
 class Solution:
     def longest_subarray_one_delete(self, nums: List[int]) -> int:
-        deleted = False
-        i = 0
         longest = 0
-        tmp_sum = 0
+        zero_count = 0
+        i = 0
 
         for j in range(len(nums)):
-            tmp_sum += nums[j]
-            if not nums[j]:
-                while deleted:
-                    if not nums[i]:
-                        deleted = False
-                    tmp_sum -= nums[i]
-                    i += 1
-                deleted = True
-            longest = max(longest, tmp_sum)
+            zero_count += 1 if nums[j] == 0 else 0
+            while zero_count > 1:
+                zero_count -= 1 if nums[i] == 0 else 0
+                i += 1
+                
+            longest = max(longest, j - i + 1)
 
-        return longest if longest < len(nums) else longest - 1
+        return longest - 1
 
