@@ -6,16 +6,16 @@ class Solution:
             return False
         
         reachable: List[bool] = [True] + [False] * (len(s) - 1)
-        sum_window = 0
+        true_sum = 0
 
         for i in range(1, len(s)):
             if i - min_jump >= 0:
-                sum_window += reachable[i - min_jump]
+                true_sum += reachable[i - min_jump]
             
             if i - max_jump > 0:
-                sum_window -= reachable[i - max_jump - 1]
+                true_sum -= reachable[i - max_jump - 1]
 
-            if s[i] == '0' or sum_window > 0:
+            if s[i] == '0' or true_sum > 0: # if s[i] is based on a window which has any reachable == true
                 reachable[i] = True
         
         return reachable[-1]
