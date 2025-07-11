@@ -15,7 +15,7 @@ class Solution:
             if i - max_jump > 0:
                 true_sum -= reachable[i - max_jump - 1]
 
-            if s[i] == '0' or true_sum > 0: # if s[i] is based on a window which has any reachable == true
+            if s[i] == '0' and true_sum > 0: # if s[i] is based on a window which has any reachable == true
                 reachable[i] = True
         
         return reachable[-1]
