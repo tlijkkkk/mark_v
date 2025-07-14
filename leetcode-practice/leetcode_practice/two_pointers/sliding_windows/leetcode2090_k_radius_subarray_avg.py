@@ -2,7 +2,7 @@ from typing import List
 
 class Solution:
     def k_radius_subarray_avg(self, nums: List[int], k: int) -> List[int]:
-        avgs: List[int] = [-1] * len(nums)
+        result: List[int] = [-1] * len(nums)
         wind_size = 2 * k + 1
         tmp_sum = 0
         i = 0
@@ -15,9 +15,9 @@ class Solution:
 
             if j - i + 1 == wind_size:
                 avg = tmp_sum // wind_size
-                avgs[j - k] = avg
+                result[j - k] = avg
 
-        return avgs    
+        return result    
                 
                 
 

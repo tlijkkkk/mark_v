@@ -6,8 +6,6 @@ class Solution:
         remaining = target % total_sum
         full_count = target // total_sum
 
-        new_target = total_sum - remaining
-
         i = 0
         tmp_sum = 0
         shortest = float('inf')
@@ -16,7 +14,7 @@ class Solution:
             tmp_sum += nums[j]
 
             while tmp_sum > remaining:
-                tmp_sum -= 1
+                tmp_sum -= nums[i]
                 i += 1
 
             if tmp_sum == remaining:
@@ -25,6 +23,7 @@ class Solution:
         i = 0
         tmp_sum = 0
         longest = 0
+        new_target = total_sum - remaining
         for j in range(len(nums)):
             tmp_sum += nums[j]
 

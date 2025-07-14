@@ -3,8 +3,8 @@ from collections import defaultdict
 
 class Solution:
     def count_zero_request_servers(self, n: int, logs: List[List[int]], x: int, queries: List[int]) -> List[int]:
-        sorted_logs: List[List[int]] = sorted(logs, key=lambda log: log[1])
-        sorted_queries: List[Tuple] = sorted([(q, i) for i, q in enumerate(queries)])
+        sorted_logs: List[List[int]] = sorted(logs, key=lambda log: log[1]) # sort logs by time
+        sorted_queries: List[Tuple] = sorted([(q, i) for i, q in enumerate(queries)]) #sort queries by time
         server_count: Dict[int, int] = defaultdict(int)
         result = [0] * len(sorted_queries)
         i, j = 0, 0

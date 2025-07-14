@@ -18,7 +18,7 @@ class Solution:
                 mono_desc.pop()
             mono_desc.append(nums[j])
 
-            while nums[j] - mono_asc[0] > 2 or mono_desc[0] - nums[j] > 2:
+            while mono_desc[0] - mono_asc[0] > 2:
                 if nums[i] == mono_asc[0]:
                     mono_asc.popleft()
                 if nums[i] == mono_desc[0]:

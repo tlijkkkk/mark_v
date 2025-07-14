@@ -3,7 +3,7 @@ from collections import defaultdict
 
 class Solution:
     def longest_equal_subarray(self, nums: List[int], k: int) -> int:
-        dt_unique_idx: Dict[int, int] = defaultdict(list)
+        dt_unique_idx: Dict[int, List[int]] = defaultdict(list)
         longest = 0
 
         for i, v in enumerate(nums):

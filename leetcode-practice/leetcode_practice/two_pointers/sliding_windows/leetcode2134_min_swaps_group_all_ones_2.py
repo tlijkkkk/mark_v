@@ -6,15 +6,15 @@ class Solution:
         if total_ones <= 1:
             return 0
 
-        def get_most(majority: int, win_size: int):
+        def get_most(target: int, win_size: int):
             i = 0
             count = 0
             min_swaps = float('inf')
             for j in range(len(nums)):
-                count += 1 if nums[j] == majority else 0
+                count += 1 if nums[j] == target else 0
 
                 while j - i + 1 > win_size:
-                    count -= 1 if nums[i] == majority else 0
+                    count -= 1 if nums[i] == target else 0
                     i += 1
             
                 if j - i + 1 == win_size:
