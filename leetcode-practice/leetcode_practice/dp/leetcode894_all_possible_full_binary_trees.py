@@ -22,5 +22,5 @@ class Solution:
                         dp[i].append(TreeNode(0, left_tree, right_tree))
 
         return dp[-1]
-
-
+    
+    
