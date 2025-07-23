@@ -1,6 +1,7 @@
 from typing import List
 
-
+# BIT is good to perform update in O(lg n) and query for prefix sum of i in O(lg n)
+# BIT is static, we cannot dynamically insert new element to he tree
 class BinaryIndexedTree:
     def __init__(self, nums: List[int]):
         self.n = len(nums)
