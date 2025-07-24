@@ -1,6 +1,8 @@
+from typing import List
+
 class Solution:
-    def is_valid_parentheses(self, s: str) -> bool:
-        ss = []
+    def valid_parentheses(self, s: str) -> bool:
+        ss: List[str] = []
         for c in s:
             if c in "({[":
                 ss.append(c)

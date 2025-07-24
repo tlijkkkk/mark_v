@@ -1,9 +1,10 @@
-from typing import List
+from typing import List, Dict
+from collections import defaultdict
 
 
 class Solution:
     def max_num_k_sum_pair(self, nums: List[int], k: int) -> int:
-        ht = {}
+        ht: Dict[int, int] = defaultdict(int)
         count = 0
 
         for num in nums:
@@ -13,6 +14,6 @@ class Solution:
                     ht.pop(k - num)
                 count += 1
             else:
-                ht[num] = ht.get(num, 0) + 1
+                ht[num] += 1
         
         return count

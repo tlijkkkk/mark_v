@@ -8,7 +8,7 @@ class Solution:
         for num in nums:
             num_set.add(num)
 
-        max_len = 0
+        longest = 0
         for num in num_set:
             if num - 1 not in num_set:
                 i = num
@@ -16,6 +16,6 @@ class Solution:
                 while i in num_set:
                     i += 1
                     count += 1
-                max_len = max(max_len, count)
+                longest = max(longest, count)
         
-        return max_len
+        return longest
