@@ -10,11 +10,11 @@ class Solution:
 
         longest = 0
         for num in num_set:
-            if num - 1 not in num_set:
+            if num + 1 not in num_set: # without this check won't achieve O(n) time complexity
                 i = num
                 count = 0
                 while i in num_set:
-                    i += 1
+                    i -= 1
                     count += 1
                 longest = max(longest, count)
         
