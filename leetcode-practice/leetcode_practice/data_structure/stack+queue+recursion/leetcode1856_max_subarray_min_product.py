@@ -12,7 +12,7 @@ class Solution:
         left: List[int] = [0] * n
         right: List[int] = [0] * n
         mono_asc_left: List[int] = []
-        mono_asc_right: List[int] = []
+        mono_desc_right: List[int] = []
 
         for i in range(n):
             while mono_asc_left and nums[mono_asc_left[-1]] >= nums[i]:
@@ -21,11 +21,11 @@ class Solution:
             mono_asc_left.append(i)
 
         for i in range(n - 1, -1, -1):
-            while mono_asc_right and nums[mono_asc_right[-1]] > nums[i]:
-                mono_asc_right.pop()
-            right[i] = mono_asc_right[-1] if mono_asc_right else n
+            while mono_desc_right and nums[mono_desc_right[-1]] >= nums[i]:
+                mono_desc_right.pop()
+            right[i] = mono_desc_right[-1] if mono_desc_right else n
 
-            mono_asc_right.append(i)
+            mono_desc_right.append(i)
 
         result = 0
         for i in range(n):
