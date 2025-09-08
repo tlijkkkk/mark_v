@@ -2,24 +2,24 @@ from typing import List
 
 class Solution:
     def palindromic_substring(self, s: str) -> int:
-        result: List[str] = []
+        result = 0
 
-        for j in range(len(s)):
-            result.append(s[j])
+        for k in range(len(s)):
+            result += 1
             
-            i = j - 1
-            k = j
-            while i >= 0 and k < len(s) and s[i] == s[k]:
-                result.append(s[i: k + 1])
+            i = k - 1
+            j = k
+            while i >= 0 and j < len(s) and s[i] == s[j]:
+                result += 1
                 i -= 1
-                k += 1
+                j += 1
             
-            i = j - 1
-            k = j + 1
-            while i >= 0 and k < len(s) and s[i] == s[k]:
-                result.append(s[i: k + 1])
+            i = k - 1
+            j = k + 1
+            while i >= 0 and j < len(s) and s[i] == s[j]:
+                result += 1
                 i -= 1
-                k += 1
+                j += 1
 
         return result
 
